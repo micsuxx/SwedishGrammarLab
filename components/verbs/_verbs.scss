@@ -1,12 +1,6 @@
 .verbs {
     margin: 0 auto;
 
-    .topic-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.2rem;
-    }
-
     .topic-card {
         min-height: 240px;
         padding: 1.6rem;
