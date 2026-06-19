@@ -1,0 +1,97 @@
+.reference-table {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.reference-table th,
+.reference-table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.25);
+    text-align: left;
+    vertical-align: top;
+}
+
+.reference-table th {
+    background: #f4efe7;
+    font-weight: 800;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.reference-table td:first-child {
+    font-weight: 800;
+    width: 150px;
+}
+
+.reference-table td:nth-child(2) {
+    min-width: 280px;
+}
+
+.example-box {
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: 14px;
+    background: #f8f6f2;
+}
+
+.category-row td {
+    background: #efe7d8;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.9rem 1rem;
+    border-top: 2px solid rgba(0,0,0,0.15);
+}
+
+.table-scroll {
+    overflow: auto;
+    max-height: 70vh;
+}
+
+.reference-table thead th {
+    position: sticky;
+    top: 80px;
+    background: #f5f0e6;
+    z-index: 20;
+    border-bottom: 2px solid #d8cbb5;
+    box-shadow: 0 2px 0 #d8cbb5;
+}
+
+.category-row td {
+
+    position: sticky;
+
+    top: 80px + 42px;
+
+    z-index: 15;
+
+    background: #efe7d8;
+
+}
+
+.conjunction-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.conjunction-table th:nth-child(1),
+.conjunction-table td:nth-child(1) {
+    width: 15%;
+}
+
+.conjunction-table th:nth-child(2),
+.conjunction-table td:nth-child(2) {
+    width: 20%;
+}
+
+.conjunction-table th:nth-child(3),
+.conjunction-table td:nth-child(3) {
+    width: 15%;
+}
+
+.conjunction-table th:nth-child(4),
+.conjunction-table td:nth-child(4) {
+    width: 50%;
+}

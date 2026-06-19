@@ -1,0 +1,285 @@
+@use "./components/header/header";
+@use "./components/home/home";
+@use "./components/verbs/verbs";
+@use "./components/word-order/word-order";
+@use "./components/conjunctions/conjunctions";
+
+/* RESET */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family: system-ui, sans-serif;
+
+    background: #f4f1ec;
+    color: #1f1f1f;
+
+    overflow-x: hidden;
+}
+
+/* GLOBAL */
+
+.container {
+    width: min(1200px, 92%);
+    margin-inline: auto;
+}
+
+#app {
+    padding-bottom: 5rem;
+}
+
+/* PAGE WRAPPER */
+
+.page {
+    width: min(1100px, 92%);
+    margin-inline: auto;
+}
+
+/* BREADCRUMBS */
+
+#breadcrumbs {
+    width: min(1100px, 92%);
+    margin: 100px auto 2rem;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+
+    min-height: 42px;
+    padding: 0.25rem;
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6f675d;
+}
+
+#breadcrumbs a,
+#breadcrumbs span {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 32px;
+    padding: 0 0.75rem;
+
+    color: inherit;
+    text-decoration: none;
+
+    border-radius: 10px;
+}
+
+#breadcrumbs a:hover {
+    background: rgba(0, 0, 0, 0.06);
+    color: #1f1f1f;
+}
+
+#breadcrumbs span {
+    opacity: 0.65;
+}
+
+#breadcrumbs span:not(:last-child) {
+    padding: 0 0.35rem;
+    opacity: 0.35;
+}
+
+/* HERO */
+
+.hero {
+    width: 100%;
+
+    margin-bottom: 3rem;
+}
+
+.hero .eyebrow {
+    margin: 0;
+
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+
+    font-size: 0.8rem;
+    font-weight: 800;
+
+    color: #6f5f48;
+}
+
+.hero h1 {
+    margin: 0.4rem 0;
+
+    font-size: clamp(2.5rem, 6vw, 5rem);
+
+    line-height: 1;
+}
+
+.hero p {
+    width: 100%;
+
+    line-height: 1.6;
+
+    font-size: 1.1rem;
+}
+
+/* GRIDS */
+
+.category-grid,
+.topic-grid {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, 280px);
+
+    justify-content: start;
+
+    gap: 1.2rem;
+}
+
+/* CARDS */
+
+.category-card,
+.topic-card {
+    min-height: 220px;
+
+    padding: 1.6rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    border-radius: 28px;
+
+    background: white;
+
+    color: inherit;
+    text-decoration: none;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.category-card:hover,
+.topic-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.12);
+}
+
+/* ICON */
+
+.category-card .icon,
+.topic-card .icon {
+    display: inline-flex;
+
+    width: 54px;
+    height: 54px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 1.5rem;
+
+    border-radius: 18px;
+
+    background: #f4f1ec;
+
+    font-size: 1.8rem;
+}
+
+/* TITLES */
+
+.category-card h2,
+.topic-card h2 {
+    margin: 0 0 0.5rem;
+
+    font-size: 1.6rem;
+}
+
+/* TEXT */
+
+.category-card p,
+.topic-card p {
+    margin: 0;
+
+    max-width: 20ch;
+
+    line-height: 1.5;
+
+    color: #666;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 14vw, 5rem);
+    }
+
+    .category-grid,
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card.coming-soon {
+    opacity: 0.75;
+    pointer-events: none;
+}
+
+.card.coming-soon::after {
+    content: "Coming Soon";
+
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    padding: 0.35rem 0.75rem;
+
+    border-radius: 999px;
+
+    background: #f59e0b;
+    color: white;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.site-footer {
+    margin-top: 4rem;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+    background: rgba(255, 255, 255, 0.5);
+
+    padding: 2rem 0;
+}
+
+.footer-content {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+
+    text-align: center;
+
+    color: #7a746b;
+    font-size: 0.9rem;
+}
