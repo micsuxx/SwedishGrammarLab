@@ -1,5 +1,7 @@
+const VERSION = "20260619";
+
 async function loadComponent(containerId, filePath) {
-    const response = await fetch(filePath);
+    const response = await fetch(`${filePath}?v=${VERSION}`);
 
     if (!response.ok) {
         throw new Error(`Could not load ${filePath}`);
@@ -10,8 +12,7 @@ async function loadComponent(containerId, filePath) {
 }
 
 async function loadPage(filePath) {
-
-    const response = await fetch(filePath);
+    const response = await fetch(`${filePath}?v=${VERSION}`);
 
     if (!response.ok) {
         await loadPage("./components/wip/wip.html");
