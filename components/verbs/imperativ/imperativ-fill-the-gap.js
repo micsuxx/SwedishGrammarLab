@@ -77,6 +77,7 @@ export const imperativQuestions = [
 { question: "_____ hjälp om du behöver det! <span class='verb-hint'>(att få)</span>", answer: "få", hint: 'The correct verb is "<b><i>få</i></b>".' },
 { question: "_____ inte boken hemma! <span class='verb-hint'>(att lämna)</span>", answer: "lämna", hint: 'The correct verb is "<b><i>lämna</i></b>".' },
 { question: "_____ försiktigt på isen! <span class='verb-hint'>(att köra)</span>", answer: "kör", hint: 'The correct verb is "<b><i>kör</i></b>".' },
+{ question: "_____ aldrig något olagligt! <span class='verb-hint'>(att begå)</span>", answer: "begå", hint: 'The correct verb is "<b><i>begå</i></b>".' }
 ];
 
 export function renderImperativFillGapQuiz() {
