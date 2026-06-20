@@ -1,4 +1,4 @@
-const VERSION = "20260619-1"; // <<< CHANGE THIS EACH UPDATE
+const VERSION = "20260620"; // <<< CHANGE THIS EACH UPDATE
 
 async function loadComponent(containerId, filePath) {
     const response = await fetch(`${filePath}?v=${VERSION}`);
@@ -70,6 +70,38 @@ function buildPath(parts) {
 
     if (parts[0] === "word-order" && parts[1] === "huvudsats-advanced") {
         return "./components/word-order/huvudsats/huvudsats-advanced.html";
+    }
+
+    if (parts[0] === "conjunctions" && parts[1] === "generella-subjunktioner") {
+        return "./components/conjunctions/subjunktioner/generella.html";
+    }
+
+    if (parts[0] === "conjunctions" && parts[1] === "temporala-subjunktioner") {
+        return "./components/conjunctions/subjunktioner/temporala.html";
+    }
+
+    if (parts[0] === "conjunctions" && parts[1] === "kausala-subjunktioner") {
+        return "./components/conjunctions/subjunktioner/kausala.html";
+    }
+
+    if (parts[0] === "conjunctions" && parts[1] === "villkorliga-subjunktioner") {
+        return "./components/conjunctions/subjunktioner/villkorliga.html";
+    }
+
+    if (parts[0] === "conjunctions" && parts[1] === "finala-subjunktioner") {
+        return "./components/conjunctions/subjunktioner/finala.html";
+    }
+
+    if (parts[0] === "conjunctions" && parts[1] === "koncessiva-subjunktioner") {
+        return "./components/conjunctions/subjunktioner/koncessiva.html";
+    }
+
+    if (parts[0] === "conjunctions" && parts[1] === "komparativa-subjunktioner") {
+        return "./components/conjunctions/subjunktioner/komparativa.html";
+    }
+
+    if (parts[0] === "conjunctions" && parts[1] === "konsekutiva-subjunktioner") {
+        return "./components/conjunctions/subjunktioner/konsekutiva.html";
     }
 
     return `./components/${parts[0]}/${parts[1]}/${parts[1]}.html`;
@@ -184,3 +216,63 @@ window.addEventListener("DOMContentLoaded", async () => {
 });
 
 window.addEventListener("hashchange", router);
+
+/* ==========================================
+   PASSWORD HASHING
+========================================== */
+
+const PASSWORD_HASH =
+    "0193e191af096da7dede9c6e8c8c11a467a40c4a71a4c4a9ec3066287cc436dc";
+
+async function sha256(text) {
+
+    const data =
+        new TextEncoder().encode(text);
+
+    const hashBuffer =
+        await crypto.subtle.digest(
+            "SHA-256",
+            data
+        );
+
+    return Array
+        .from(new Uint8Array(hashBuffer))
+        .map(byte =>
+            byte.toString(16).padStart(2, "0")
+        )
+        .join("");
+}
+
+/* ==========================================
+   RESOURCE ACCESS
+========================================== */
+
+document.addEventListener("click", async (event) => {
+
+    const resourceLink =
+        event.target.closest("#resources-link");
+
+    if (!resourceLink) return;
+
+    event.preventDefault();
+
+    const password =
+        prompt("Please enter the password:");
+
+    if (!password) return;
+
+    const enteredHash =
+        await sha256(password);
+
+    if (enteredHash === PASSWORD_HASH) {
+
+        window.location.hash =
+            "#resources";
+
+    } else {
+
+        alert("Incorrect password.");
+
+    }
+
+});
