@@ -463,6 +463,124 @@
   margin-top: 0;
 }
 
+.bisats-word-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #f7f3ec);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.bisats-word {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.bisats-word:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  background: #fffdf7;
+}
+
+.bisats-word.selected {
+  background: #fff8e8;
+  border-color: #d6a84f;
+}
+
+.bisats-word.correct {
+  background: #d9ead3;
+  border-color: #8ab17d;
+}
+
+.bisats-word.incorrect {
+  background: #f4cccc;
+  border-color: #c77c7c;
+}
+
+.bisats-feedback {
+  margin-top: 1rem;
+  font-weight: 700;
+  color: #6f675d;
+}
+
+.option-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #f7f3ec);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.option-bank .word-chip.selected {
+  background: #fff8e8;
+  border-color: #d6a84f;
+  box-shadow: 0 0 0 3px rgba(214, 168, 79, 0.25);
+  transform: translateY(-2px);
+}
+
+.incorrect-sentence {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff8e8;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.correction-input {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  border: 2px solid #d8cbb5;
+  background: #ffffff;
+  font: inherit;
+  font-size: 1rem;
+}
+
+.correction-input:focus {
+  outline: none;
+  border-color: #c9a96e;
+  box-shadow: 0 0 0 4px rgba(201, 169, 110, 0.22);
+}
+
+.quiz-item.is-correct .correction-input {
+  border-color: #8ab17d;
+  background: #f4fbf1;
+}
+
+.quiz-item.is-incorrect .correction-input {
+  border-color: #c77c7c;
+  background: #fff5f5;
+}
+
+.hint {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  border-left: 4px solid #c9a96e;
+  background: #f8f6f2;
+  line-height: 1.6;
+}
+
 :root {
   --table-header-height: 44px;
 }

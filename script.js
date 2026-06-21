@@ -72,6 +72,22 @@ function buildPath(parts) {
         return "./components/word-order/huvudsats/huvudsats-advanced.html";
     }
 
+    if (parts[0] === "word-order" && parts[1] === "bisats-easy") {
+        return "./components/word-order/bisats/bisats-easy.html";
+    }
+
+    if (parts[0] === "word-order" && parts[1] === "bisats-intermediate") {
+        return "./components/word-order/bisats/bisats-intermediate.html";
+    }
+
+    if (parts[0] === "word-order" && parts[1] === "bisats-advanced") {
+        return "./components/word-order/bisats/bisats-advanced.html";
+    }
+
+    if (parts[0] === "word-order" && parts[1] === "huvudsats-bisats") {
+        return "./components/word-order/bisats/huvudsats-bisats.html";
+    }
+
     if (parts[0] === "conjunctions" && parts[1] === "generella-subjunktioner") {
         return "./components/conjunctions/subjunktioner/generella.html";
     }
@@ -103,6 +119,8 @@ function buildPath(parts) {
     if (parts[0] === "conjunctions" && parts[1] === "konsekutiva-subjunktioner") {
         return "./components/conjunctions/subjunktioner/konsekutiva.html";
     }
+
+    
 
     return `./components/${parts[0]}/${parts[1]}/${parts[1]}.html`;
 }
@@ -180,6 +198,26 @@ async function loadRouteScript(route) {
         const module = await import("./components/word-order/huvudsats/huvudsats-advanced.js");
         module.renderAdvancedHuvudsatsDragQuiz();
     }
+
+    if (route === "#word-order/bisats-easy") {
+        const module = await import("./components/word-order/bisats/bisats-easy.js");
+        module.renderBisatsEasyQuiz();
+    }
+
+    if (route === "#word-order/bisats-intermediate") {
+        const module = await import("./components/word-order/bisats/bisats-intermediate.js");
+        module.renderBisatsIntermediateQuiz();
+    }
+
+    if (route === "#word-order/bisats-advanced") {
+        const module = await import("./components/word-order/bisats/bisats-advanced.js");
+        module.renderAdvancedBisatsDragQuiz();
+    }
+
+    if (route === "#word-order/huvudsats-bisats") {
+        const module = await import("./components/word-order/bisats/huvudsats-bisats.js");
+        module.renderMistakeQuiz();
+    }
 }
 
 async function router() {
@@ -224,6 +262,8 @@ window.addEventListener("hashchange", router);
 const PASSWORD_HASH =
     "0193e191af096da7dede9c6e8c8c11a467a40c4a71a4c4a9ec3066287cc436dc";
 
+let failedAttempts = 0;
+
 async function sha256(text) {
 
     const data =
@@ -257,7 +297,7 @@ document.addEventListener("click", async (event) => {
     event.preventDefault();
 
     const password =
-        prompt("Please enter the password:");
+        prompt("Please enter the password given to you by Mike:");
 
     if (!password) return;
 
@@ -266,12 +306,39 @@ document.addEventListener("click", async (event) => {
 
     if (enteredHash === PASSWORD_HASH) {
 
+        failedAttempts = 0;
+
         window.location.hash =
             "#resources";
 
     } else {
 
-        alert("Incorrect password.");
+        failedAttempts++;
+
+        if (failedAttempts >= 5) {
+            alert(
+                "Attempt #" + failedAttempts + ". Congratulations. You have discovered an alternative exercise: Advanced Password Guessing (C2 level)."
+            );
+
+        } else if (failedAttempts >= 4) {
+
+            alert(
+                "Attempt #" + failedAttempts + ". Statistically speaking, Mike will answer your email before you guess the password."
+            );
+
+        } else if (failedAttempts >= 3) {
+
+            alert(
+                "I see you are trying to guess the password. That's quite ambitious. Fun fact: learning Swedish grammar is usually easier than guessing this password."
+            );
+
+        } else {
+
+            alert(
+                "This password appears no longer to be valid. Please try again."
+            );
+
+        }
 
     }
 
