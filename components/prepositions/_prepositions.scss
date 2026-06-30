@@ -1,0 +1,52 @@
+.prep-table, .note-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.prep-table th:nth-child(1),
+.prep-table td:nth-child(1) {
+    width: 15%;
+}
+
+.prep-table th:nth-child(2),
+.prep-table td:nth-child(2) {
+    width: 20%;
+}
+
+.prep-table th:nth-child(3),
+.prep-table td:nth-child(3) {
+    width: 20%;
+}
+
+.prep-table th:nth-child(4),
+.prep-table td:nth-child(4) {
+    width: 45%;
+}
+
+.mini-reference-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 0.75rem;
+}
+
+.mini-reference-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.inline-gap-input {
+    width: 8rem;
+
+    padding: 0.15rem 0.25rem;
+
+    border: none;
+    border-bottom: 2px solid #64748b;
+
+    background: transparent;
+
+    text-align: center;
+    font: inherit;
+
+    &:focus {
+        outline: none;
+        border-bottom-color: #2563eb;
+    }
+}

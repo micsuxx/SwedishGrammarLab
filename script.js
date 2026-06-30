@@ -120,6 +120,54 @@ function buildPath(parts) {
         return "./components/conjunctions/subjunktioner/konsekutiva.html";
     }
 
+    if (parts[0] === "prepositions" && parts[1] === "most-common") {
+        return "./components/prepositions/prepositions/1mostcommon.html";
+    }
+
+    if (parts[0] === "prepositions" && parts[1] === "av") {
+        return "./components/prepositions/prepositions/av.html";
+    }
+
+    if (parts[0] === "prepositions" && parts[1] === "foer") {
+        return "./components/prepositions/prepositions/foer.html";
+    }
+
+    if (parts[0] === "prepositions" && parts[1] === "fraan") {
+        return "./components/prepositions/prepositions/fraan.html";
+    }
+
+    if (parts[0] === "prepositions" && parts[1] === "i") {
+        return "./components/prepositions/prepositions/i.html";
+    }
+
+    if (parts[0] === "prepositions" && parts[1] === "med") {
+        return "./components/prepositions/prepositions/med.html";
+    }
+
+    if (parts[0] === "prepositions" && parts[1] === "om") {
+        return "./components/prepositions/prepositions/om.html";
+    }
+
+    if (parts[0] === "prepositions" && parts[1] === "paa") {
+        return "./components/prepositions/prepositions/paa.html";
+    }
+
+    if (parts[0] === "prepositions" && parts[1] === "till") {
+        return "./components/prepositions/prepositions/till.html";
+    }
+
+    if (parts[0] === "prepositions" && parts[1] === "under") {
+        return "./components/prepositions/prepositions/under.html";
+    }
+
+    if (parts[0] === "prepositions" && parts[1] === "vid") {
+        return "./components/prepositions/prepositions/vid.html";
+    }
+
+    if (parts[0] === "prepositions" && parts[1] === "prepositions-fill-the-gap") {
+        return "./components/prepositions/exercises/prepositions-fill-the-gap.html";
+    }
+
     
 
     return `./components/${parts[0]}/${parts[1]}/${parts[1]}.html`;
@@ -218,6 +266,12 @@ async function loadRouteScript(route) {
         const module = await import("./components/word-order/bisats/huvudsats-bisats.js");
         module.renderMistakeQuiz();
     }
+
+    if (route == "#prepositions/prepositions-fill-the-gap") {
+        const module = await import("./components/prepositions/exercises/prepositions-fill-the-gap.js");
+        module.renderPrepositionFillGapQuiz();
+    }
+
 }
 
 async function router() {

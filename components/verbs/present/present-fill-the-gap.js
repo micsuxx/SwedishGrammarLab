@@ -100,17 +100,21 @@ export function renderPresentFillGapQuiz() {
 
     quizForm.innerHTML = questions.map((item, index) => `
         <section class="quiz-item" data-question-index="${index}">
-            <p class="question">${index + 1}. ${item.question}</p>
-
-            <input
-                type="text"
-                class="gap-input"
-                name="q${index}"
-                autocomplete="off"
-                placeholder="Write your answer"
-            >
+            <p class="question">
+                ${index + 1}. ${item.question.replace(
+                    "_____",
+                    `<input
+                        type="text"
+                        class="gap-input inline-gap-input"
+                        name="q${index}"
+                        autocomplete="off"
+                    >`
+                )}
+            </p>
         </section>
     `).join("");
+
+    
 
     quizForm.onsubmit = event => {
         event.preventDefault();

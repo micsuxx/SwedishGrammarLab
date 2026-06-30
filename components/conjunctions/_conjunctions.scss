@@ -89,29 +89,37 @@
 
 /* Specific layout for conjunction tables */
 
-.conjunction-table {
+.conjunction-table, .satsadverb-table {
     width: 100%;
     table-layout: fixed;
 }
 
 .conjunction-table th:nth-child(1),
-.conjunction-table td:nth-child(1) {
+.conjunction-table td:nth-child(1),
+.satsadverb-table th:nth-child(1),
+.satsadverb-table td:nth-child(1) {
     width: 15%;
 }
 
 .conjunction-table th:nth-child(2),
-.conjunction-table td:nth-child(2) {
+.conjunction-table td:nth-child(2),
+.satsadverb-table th:nth-child(2),
+.satsadverb-table td:nth-child(2) {
     width: 20%;
     min-width: 0;
 }
 
 .conjunction-table th:nth-child(3),
-.conjunction-table td:nth-child(3) {
+.conjunction-table td:nth-child(3),
+.satsadverb-table th:nth-child(3),
+.satsadverb-table td:nth-child(3) {
     width: 20%;
 }
 
 .conjunction-table th:nth-child(4),
-.conjunction-table td:nth-child(4) {
+.conjunction-table td:nth-child(4),
+.satsadverb-table th:nth-child(4),
+.satsadverb-table td:nth-child(4) {
     width: 45%;
 }
 
