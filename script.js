@@ -1,4 +1,4 @@
-const VERSION = "20260701"; // <<< CHANGE THIS EACH UPDATE
+const VERSION = Date.now(); // <<< CHANGE THIS EACH UPDATE
 
 async function loadComponent(containerId, filePath) {
     const response = await fetch(`${filePath}?v=${VERSION}`);
