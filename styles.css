@@ -1002,6 +1002,21 @@ body {
   font-weight: 600;
 }
 
+.card.new::after,
+.category-card.new::after,
+.topic-card.new::after {
+  content: "New";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: #0096c7;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
 /* FOOTER */
 .site-footer {
   margin-top: 4rem;

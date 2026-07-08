@@ -317,6 +317,7 @@ async function router() {
 
     if (parts[0] === "home") {
         await loadPage("./components/home/home.html");
+        removeExpiredNewBadges();
         return;
     }
 
@@ -331,6 +332,17 @@ function capitalize(word) {
         .split("-")
         .map(item => item.charAt(0).toUpperCase() + item.slice(1))
         .join(" ");
+}
+
+function removeExpiredNewBadges() {
+    document.querySelectorAll(".category-card.new[data-release]").forEach(card => {
+        const releaseDate = new Date(card.dataset.release);
+        const daysOld = (Date.now() - releaseDate) / 86400000;
+
+        if (daysOld > 7) {
+            card.classList.remove("new");
+        }
+    });
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
