@@ -168,9 +168,24 @@ function buildPath(parts) {
         return "./components/prepositions/exercises/prepositions-fill-the-gap.html";
     }
 
-    
+    if (parts[0] === "nouns" && parts[1] === "en-vs-ett") {
+        return "./components/nouns/exercises/en-vs-ett.html";
+    }
+
+    if (parts[0] === "nouns" && parts[1] === "singular-vs-plural") {
+        return "./components/nouns/exercises/singular-vs-plural.html";
+    }
+
+    if (parts[0] === "nouns" && parts[1] === "definite-form-singular") {
+        return "./components/nouns/exercises/definite-form-singular.html";
+    }
+
+    if (parts[0] === "nouns" && parts[1] === "definite-form-plural") {
+        return "./components/nouns/exercises/definite-form-plural.html";
+    }
 
     return `./components/${parts[0]}/${parts[1]}/${parts[1]}.html`;
+    
 }
 
 function updateBreadcrumbs(route) {
@@ -270,6 +285,26 @@ async function loadRouteScript(route) {
     if (route == "#prepositions/prepositions-fill-the-gap") {
         const module = await import("./components/prepositions/exercises/prepositions-fill-the-gap.js");
         module.renderPrepositionFillGapQuiz();
+    }
+
+    if (route == "#nouns/en-vs-ett") {
+        const module = await import("./components/nouns/exercises/en-vs-ett.js");
+        module.renderEnEttQuiz();
+    }
+
+    if (route == "#nouns/singular-vs-plural") {
+        const module = await import("./components/nouns/exercises/singular-vs-plural.js");
+        module.renderSingularPluralQuiz();
+    }
+
+    if (route == "#nouns/definite-form-singular") {
+        const module = await import("./components/nouns/exercises/definite-form-singular.js");
+        module.renderDefiniteSingularQuiz();
+    }
+
+    if (route == "#nouns/definite-form-plural") {
+        const module = await import("./components/nouns/exercises/definite-form-plural.js");
+        module.renderDefinitePluralQuiz();
     }
 
 }

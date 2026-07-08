@@ -767,7 +767,7 @@
 }
 
 .inline-gap-input {
-  width: 8rem;
+  width: 7rem;
   padding: 0.15rem 0.25rem;
   border: none;
   border-bottom: 2px solid #64748b;
@@ -776,6 +776,20 @@
   font: inherit;
 }
 .inline-gap-input:focus {
+  outline: none;
+  border-bottom-color: #2563eb;
+}
+
+.inline-gap-input-nouns {
+  width: 15rem;
+  padding: 0.15rem 0.25rem;
+  border: none;
+  border-bottom: 2px solid #64748b;
+  background: transparent;
+  text-align: center;
+  font: inherit;
+}
+.inline-gap-input-nouns:focus {
   outline: none;
   border-bottom-color: #2563eb;
 }
@@ -962,6 +976,21 @@ body {
 .category-card.coming-soon::after,
 .topic-card.coming-soon::after {
   content: "Coming Soon";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: #f59e0b;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.card.coming-soon-december::after,
+.category-card.coming-soon-december::after,
+.topic-card.coming-soon-december::after {
+  content: "Coming in December 2026";
   position: absolute;
   top: 12px;
   right: 12px;

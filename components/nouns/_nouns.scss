@@ -1,0 +1,18 @@
+.inline-gap-input-nouns {
+    width: 15rem;
+
+    padding: 0.15rem 0.25rem;
+
+    border: none;
+    border-bottom: 2px solid #64748b;
+
+    background: transparent;
+
+    text-align: center;
+    font: inherit;
+
+    &:focus {
+        outline: none;
+        border-bottom-color: #2563eb;
+    }
+}

@@ -4,6 +4,7 @@
 @use "./components/word-order/word-order";
 @use "./components/conjunctions/conjunctions";
 @use "./components/prepositions/prepositions";
+@use "./components/nouns/nouns";
 
 /* RESET */
 
@@ -229,6 +230,26 @@ body {
 .category-card.coming-soon::after,
 .topic-card.coming-soon::after {
     content: "Coming Soon";
+
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    padding: 0.35rem 0.75rem;
+
+    border-radius: 999px;
+
+    background: #f59e0b;
+    color: white;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.card.coming-soon-december::after,
+.category-card.coming-soon-december::after,
+.topic-card.coming-soon-december::after {
+    content: "Coming in December 2026";
 
     position: absolute;
     top: 12px;
