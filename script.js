@@ -1,4 +1,5 @@
 const VERSION = Date.now(); // <<< CHANGE THIS EACH UPDATE
+const SITE_VERSION = "2026-07-09"; // <<< CHANGE THIS EACH UPDATE
 
 async function loadComponent(containerId, filePath) {
     const response = await fetch(`${filePath}?v=${VERSION}`);
@@ -184,6 +185,18 @@ function buildPath(parts) {
         return "./components/nouns/exercises/definite-form-plural.html";
     }
 
+    if (parts[0] === "nouns" && parts[1] === "declensions") {
+        return "./components/nouns/exercises/declensions.html";
+    }
+
+    if (parts[0] === "nouns" && parts[1] === "fix-the-mistake") {
+        return "./components/nouns/exercises/fix-the-mistake.html";
+    }
+
+    if (parts[0] === "nouns" && parts[1] === "genitive") {
+        return "./components/nouns/exercises/genitive.html";
+    }
+
     return `./components/${parts[0]}/${parts[1]}/${parts[1]}.html`;
     
 }
@@ -307,6 +320,21 @@ async function loadRouteScript(route) {
         module.renderDefinitePluralQuiz();
     }
 
+    if (route == "#nouns/declensions") {
+        const module = await import("./components/nouns/exercises/declensions.js");
+        module.renderDeclensionsQuiz();
+    }
+
+    if (route == "#nouns/fix-the-mistake") {
+        const module = await import("./components/nouns/exercises/fix-the-mistake.js");
+        module.renderFixTheMistakeQuiz();
+    }
+
+    if (route == "#nouns/genitive") {
+        const module = await import("./components/nouns/exercises/genitive.js");
+        module.renderGenitiveQuiz();
+    }
+
 }
 
 async function router() {
@@ -346,6 +374,14 @@ function removeExpiredNewBadges() {
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
+    const lastUpdated = document.getElementById("last-updated");
+
+    if (lastUpdated) {
+
+        lastUpdated.textContent = `Last updated: ${SITE_VERSION}`;
+
+    }
+
     await loadComponent(
         "header-container",
         "./components/header/header.html"
