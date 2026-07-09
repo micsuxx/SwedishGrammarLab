@@ -1,4 +1,4 @@
-const VERSION = "20260710-03"; // <<< CHANGE THIS EACH UPDATE
+const VERSION = "20260710-05"; // <<< CHANGE THIS EACH UPDATE
 const SITE_VERSION = "2026-07-10"; // <<< CHANGE THIS EACH UPDATE
 
 async function loadComponent(containerId, filePath) {
