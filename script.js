@@ -2,7 +2,9 @@ const VERSION = "20260710-1"; // <<< CHANGE THIS EACH UPDATE
 const SITE_VERSION = "2026-07-10"; // <<< CHANGE THIS EACH UPDATE
 
 async function loadComponent(containerId, filePath) {
-    const response = await fetch(`${filePath}?v=${VERSION}`);
+    const response = await fetch(`${filePath}?v=${VERSION}`, {
+        cache: "no-store"
+    });
 
     if (!response.ok) {
         throw new Error(`Could not load ${filePath}`);
@@ -13,7 +15,9 @@ async function loadComponent(containerId, filePath) {
 }
 
 async function loadPage(filePath) {
-    const response = await fetch(`${filePath}?v=${VERSION}`);
+    const response = await fetch(`${filePath}?v=${VERSION}`, {
+        cache: "no-store"
+    });
 
     if (!response.ok) {
         await loadPage("./components/wip/wip.html");
