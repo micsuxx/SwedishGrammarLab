@@ -1,5 +1,5 @@
-const VERSION = "20260709"; // <<< CHANGE THIS EACH UPDATE
-const SITE_VERSION = "2026-07-09"; // <<< CHANGE THIS EACH UPDATE
+const VERSION = "20260710"; // <<< CHANGE THIS EACH UPDATE
+const SITE_VERSION = "2026-07-10"; // <<< CHANGE THIS EACH UPDATE
 
 async function loadComponent(containerId, filePath) {
     const response = await fetch(`${filePath}?v=${VERSION}`);
@@ -59,6 +59,18 @@ function buildPath(parts) {
 
     if (parts[0] === "verbs" && parts[1] === "verb-final") {
         return "./components/verbs/final/verb-final.html";
+    }
+
+    if (parts[0] === "verbs" && parts[1] === "s-passiv") {
+        return "./components/verbs/passiv/s-passiv.html";
+    }
+
+    if (parts[0] === "verbs" && parts[1] === "bli-passiv") {
+        return "./components/verbs/passiv/bli-passiv.html";
+    }
+
+    if (parts[0] === "verbs" && parts[1] === "vara-passiv") {
+        return "./components/verbs/passiv/vara-passiv.html";
     }
 
     if (parts[0] === "word-order" && parts[1] === "huvudsats-easy") {
@@ -260,6 +272,22 @@ async function loadRouteScript(route) {
         const module = await import("./components/verbs/final/verb-final.js");
         module.renderVerbFinalQuiz();
     }
+
+    if (route == "#verbs/s-passiv") {
+        const module = await import("./components/verbs/passiv/s-passiv.js");
+        module.renderSPassivQuiz();
+    }
+
+    if (route == "#verbs/bli-passiv") {
+        const module = await import("./components/verbs/passiv/bli-passiv.js");
+        module.renderBliPassivQuiz();
+    }
+
+    if (route == "#verbs/vara-passiv") {
+        const module = await import("./components/verbs/passiv/vara-passiv.js");
+        module.renderVaraPassivQuiz();
+    }
+
     if (route === "#word-order/huvudsats-easy") {
         const module = await import("./components/word-order/huvudsats/huvudsats-easy.js");
         module.renderEasyHuvudsatsDragQuiz();
