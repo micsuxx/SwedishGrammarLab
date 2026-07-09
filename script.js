@@ -1,4 +1,4 @@
-const VERSION = "20260710-02"; // <<< CHANGE THIS EACH UPDATE
+const VERSION = "20260710-03"; // <<< CHANGE THIS EACH UPDATE
 const SITE_VERSION = "2026-07-10"; // <<< CHANGE THIS EACH UPDATE
 
 async function loadComponent(containerId, filePath) {
@@ -238,132 +238,132 @@ function updateBreadcrumbs(route) {
 async function loadRouteScript(route) {
 
     if (route === "#verbs/present") {
-        const module = await import("./components/verbs/present/present.js?v=${VERSION}`");
+        const module = await import(`./components/verbs/present/present.js?v=${VERSION}`);
         module.renderPresentQuiz();
     }
 
     if (route === "#verbs/present-fill-the-gap") {
-        const module = await import("./components/verbs/present/present-fill-the-gap.js?v=${VERSION}`");
+        const module = await import(`./components/verbs/present/present-fill-the-gap.js?v=${VERSION}`);
         module.renderPresentFillGapQuiz();
     }
 
     if (route == "#verbs/preteritum") {
-        const module = await import("./components/verbs/preteritum/preteritum.js?v=${VERSION}`");
+        const module = await import(`./components/verbs/preteritum/preteritum.js?v=${VERSION}`);
         module.renderPreteritumQuiz();
     }
 
     if (route == "#verbs/preteritum-fill-the-gap") {
-        const module = await import("./components/verbs/preteritum/preteritum-fill-the-gap.js?v=${VERSION}`");
+        const module = await import(`./components/verbs/preteritum/preteritum-fill-the-gap.js?v=${VERSION}`);
         module.renderPreteritumFillGapQuiz();
     }
 
     if (route == "#verbs/perfekt") {
-        const module = await import("./components/verbs/perfekt/perfekt.js?v=${VERSION}`");
+        const module = await import(`./components/verbs/perfekt/perfekt.js?v=${VERSION}`);
         module.renderPerfektQuiz();
     }
 
     if (route == "#verbs/perfekt-fill-the-gap") {
-        const module = await import("./components/verbs/perfekt/perfekt-fill-the-gap.js?v=${VERSION}`");
+        const module = await import(`./components/verbs/perfekt/perfekt-fill-the-gap.js?v=${VERSION}`);
         module.renderPerfektFillGapQuiz();
     }
 
     if (route == "#verbs/imperativ-fill-the-gap") {
-        const module = await import("./components/verbs/imperativ/imperativ-fill-the-gap.js?v=${VERSION}`");
+        const module = await import(`./components/verbs/imperativ/imperativ-fill-the-gap.js?v=${VERSION}`);
         module.renderImperativFillGapQuiz();
     }
 
     if (route == "#verbs/verb-final") {
-        const module = await import("./components/verbs/final/verb-final.js?v=${VERSION}`");
+        const module = await import(`./components/verbs/final/verb-final.js?v=${VERSION}`);
         module.renderVerbFinalQuiz();
     }
 
     if (route == "#verbs/s-passiv") {
-        const module = await import("./components/verbs/passiv/s-passiv.js?v=${VERSION}`");
+        const module = await import(`./components/verbs/passiv/s-passiv.js?v=${VERSION}`);
         module.renderSPassivQuiz();
     }
 
     if (route == "#verbs/bli-passiv") {
-        const module = await import("./components/verbs/passiv/bli-passiv.js?v=${VERSION}`");
+        const module = await import(`./components/verbs/passiv/bli-passiv.js?v=${VERSION}`);
         module.renderBliPassivQuiz();
     }
 
     if (route == "#verbs/vara-passiv") {
-        const module = await import("./components/verbs/passiv/vara-passiv.js?v=${VERSION}`");
+        const module = await import(`./components/verbs/passiv/vara-passiv.js?v=${VERSION}`);
         module.renderVaraPassivQuiz();
     }
 
     if (route === "#word-order/huvudsats-easy") {
-        const module = await import("./components/word-order/huvudsats/huvudsats-easy.js?v=${VERSION}`");
+        const module = await import(`./components/word-order/huvudsats/huvudsats-easy.js?v=${VERSION}`);
         module.renderEasyHuvudsatsDragQuiz();
     }
 
     if (route === "#word-order/huvudsats-intermediate") {
-        const module = await import("./components/word-order/huvudsats/huvudsats-intermediate.js?v=${VERSION}`");
+        const module = await import(`./components/word-order/huvudsats/huvudsats-intermediate.js?v=${VERSION}`);
         module.renderIntermediateHuvudsatsDragQuiz();
     }
 
     if (route === "#word-order/huvudsats-advanced") {
-        const module = await import("./components/word-order/huvudsats/huvudsats-advanced.js?v=${VERSION}`");
+        const module = await import(`./components/word-order/huvudsats/huvudsats-advanced.js?v=${VERSION}`);
         module.renderAdvancedHuvudsatsDragQuiz();
     }
 
     if (route === "#word-order/bisats-easy") {
-        const module = await import("./components/word-order/bisats/bisats-easy.js?v=${VERSION}`");
+        const module = await import(`./components/word-order/bisats/bisats-easy.js?v=${VERSION}`);
         module.renderBisatsEasyQuiz();
     }
 
     if (route === "#word-order/bisats-intermediate") {
-        const module = await import("./components/word-order/bisats/bisats-intermediate.js?v=${VERSION}`");
+        const module = await import(`./components/word-order/bisats/bisats-intermediate.js?v=${VERSION}`);
         module.renderBisatsIntermediateQuiz();
     }
 
     if (route === "#word-order/bisats-advanced") {
-        const module = await import("./components/word-order/bisats/bisats-advanced.js?v=${VERSION}`");
+        const module = await import(`./components/word-order/bisats/bisats-advanced.js?v=${VERSION}`);
         module.renderAdvancedBisatsDragQuiz();
     }
 
     if (route === "#word-order/huvudsats-bisats") {
-        const module = await import("./components/word-order/bisats/huvudsats-bisats.js?v=${VERSION}`");
+        const module = await import(`./components/word-order/bisats/huvudsats-bisats.js?v=${VERSION}`);
         module.renderMistakeQuiz();
     }
 
     if (route == "#prepositions/prepositions-fill-the-gap") {
-        const module = await import("./components/prepositions/exercises/prepositions-fill-the-gap.js?v=${VERSION}`");
+        const module = await import(`./components/prepositions/exercises/prepositions-fill-the-gap.js?v=${VERSION}`);
         module.renderPrepositionFillGapQuiz();
     }
 
     if (route == "#nouns/en-vs-ett") {
-        const module = await import("./components/nouns/exercises/en-vs-ett.js?v=${VERSION}`");
+        const module = await import(`./components/nouns/exercises/en-vs-ett.js?v=${VERSION}`);
         module.renderEnEttQuiz();
     }
 
     if (route == "#nouns/singular-vs-plural") {
-        const module = await import("./components/nouns/exercises/singular-vs-plural.js?v=${VERSION}`");
+        const module = await import(`./components/nouns/exercises/singular-vs-plural.js?v=${VERSION}`);
         module.renderSingularPluralQuiz();
     }
 
     if (route == "#nouns/definite-form-singular") {
-        const module = await import("./components/nouns/exercises/definite-form-singular.js?v=${VERSION}`");
+        const module = await import(`./components/nouns/exercises/definite-form-singular.js?v=${VERSION}`);
         module.renderDefiniteSingularQuiz();
     }
 
     if (route == "#nouns/definite-form-plural") {
-        const module = await import("./components/nouns/exercises/definite-form-plural.js?v=${VERSION}`");
+        const module = await import(`./components/nouns/exercises/definite-form-plural.js?v=${VERSION}`);
         module.renderDefinitePluralQuiz();
     }
 
     if (route == "#nouns/declensions") {
-        const module = await import("./components/nouns/exercises/declensions.js?v=${VERSION}`");
+        const module = await import(`./components/nouns/exercises/declensions.js?v=${VERSION}`);
         module.renderDeclensionsQuiz();
     }
 
     if (route == "#nouns/fix-the-mistake") {
-        const module = await import("./components/nouns/exercises/fix-the-mistake.js?v=${VERSION}`");
+        const module = await import(`./components/nouns/exercises/fix-the-mistake.js?v=${VERSION}`);
         module.renderFixTheMistakeQuiz();
     }
 
     if (route == "#nouns/genitive") {
-        const module = await import("./components/nouns/exercises/genitive.js?v=${VERSION}`");
+        const module = await import(`./components/nouns/exercises/genitive.js?v=${VERSION}`);
         module.renderGenitiveQuiz();
     }
 
